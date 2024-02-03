@@ -23,7 +23,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/ThePBone/GalaxyBudsClient
-        commit: 1dfedfebbf09099351a889903ce76b0bf8ed2596
+        commit: cbc874f27c9e907b76a5fda3c9c0d4dca0ac5484
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
