@@ -17,6 +17,7 @@ finish-args:
   - --talk-name=com.canonical.Unity.LauncherEntry
   - --talk-name=org.kde.StatusNotifierWatcher
   - --own-name=org.kde.*
+  - --own-name=me.timschneeberger.galaxybudsclient
   - --filesystem=xdg-download:ro # xdg-desktop-portal integration only available starting with Avalonia 11.0.0-rc1.1
 modules:
   - name: GalaxyBudsClient
