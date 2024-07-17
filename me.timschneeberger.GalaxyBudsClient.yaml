@@ -23,8 +23,8 @@ modules:
       - type: git
         url: https://github.com/ThePBone/GalaxyBudsClient
         # tag: 5.1.0
-        # Temporary: checkout one commit after the 5.1.0 tag to fix flatpak-related issues
-        commit: 581229ccdf22d3142d1a87031a73ab512db77dce
+        # Temporary: checkout two commits after the 5.1.0 tag to fix flatpak-related issues
+        commit: 5afccf24ffffd58e47a9d77001f2d6de5458625b
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
