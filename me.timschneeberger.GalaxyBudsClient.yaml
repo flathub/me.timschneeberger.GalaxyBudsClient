@@ -23,10 +23,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/ThePBone/GalaxyBudsClient
-        tag: 4.6.0
-        commit: 03742b2902d50a7f13b00c1450cf47298f60fc67
-      - type: patch
-        path: fix-ci-build-avalonia-version.patch
+        # tag: 5.1.0
+        # Temporary: checkout one commit after the 5.1.0 tag to fix flatpak-related issues
+        commit: 581229ccdf22d3142d1a87031a73ab512db77dce
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
@@ -42,5 +41,5 @@ modules:
       - '. /usr/lib/sdk/dotnet8/enable.sh ; dotnet publish -r linux-$RID -c Release --self-contained true --source ./nuget-sources GalaxyBudsClient/GalaxyBudsClient.csproj'
       - 'cp -r --remove-destination /run/build/GalaxyBudsClient/GalaxyBudsClient/bin/Release/net8.0/linux-$RID/publish/ /app/bin/'
       - install -Dm644 meta/flatpak/me.timschneeberger.GalaxyBudsClient.metainfo.xml /app/share/metainfo/me.timschneeberger.GalaxyBudsClient.metainfo.xml
-      - install -Dm644 GalaxyBudsClient/Resources/icon_white.png /app/share/icons/hicolor/128x128/apps/me.timschneeberger.GalaxyBudsClient.png
+      - install -Dm644 GalaxyBudsClient/Resources/icon.png /app/share/icons/hicolor/128x128/apps/me.timschneeberger.GalaxyBudsClient.png
       - install -Dm644 meta/flatpak/me.timschneeberger.GalaxyBudsClient.desktop /app/share/applications/me.timschneeberger.GalaxyBudsClient.desktop
