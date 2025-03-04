@@ -1,6 +1,6 @@
 app-id: me.timschneeberger.GalaxyBudsClient
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: GalaxyBudsClient
 sdk-extensions:
@@ -22,9 +22,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ThePBone/GalaxyBudsClient
-        # tag: 5.1.0
-        # Temporary: checkout two commits after the 5.1.0 tag to fix flatpak-related issues
-        commit: 5afccf24ffffd58e47a9d77001f2d6de5458625b
+        tag: 5.1.2
+        commit: b39e90c886be5720e3ad4e022cda78f2352d3e69
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
