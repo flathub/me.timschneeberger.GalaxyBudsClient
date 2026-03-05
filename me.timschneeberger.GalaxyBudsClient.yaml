@@ -4,7 +4,7 @@ runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: GalaxyBudsClient
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.dotnet8
+  - org.freedesktop.Sdk.Extension.dotnet10
 finish-args:
   - --socket=x11 # https://github.com/AvaloniaUI/Avalonia/issues/1243 😔
   - --share=ipc
@@ -17,13 +17,19 @@ finish-args:
   - --talk-name=com.canonical.Unity.LauncherEntry
   - --talk-name=org.kde.StatusNotifierWatcher
   - --own-name=org.kde.*
+build-options:
+  append-path: /usr/lib/sdk/dotnet10/bin
+  append-ld-library-path: /usr/lib/sdk/dotnet10/lib
+  prepend-pkg-config-path: /usr/lib/sdk/dotnet10/lib/pkgconfig
+
 modules:
   - name: GalaxyBudsClient
     sources:
       - type: git
-        url: https://github.com/ThePBone/GalaxyBudsClient
-        tag: 5.1.2
-        commit: b39e90c886be5720e3ad4e022cda78f2352d3e69
+        url: https://github.com/timschneeb/GalaxyBudsClient
+        # tag: 5.2.0
+        # Flatpak fix: 2 commits after 5.2.0
+        commit: 49c000c8bb8f8d9b130c32a567d91c56cda2d191
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
@@ -31,13 +37,14 @@ modules:
       arch:
         x86_64:
           env:
-            RID: x64
+            RUNTIME: linux-x64
         aarch64:
           env:
-            RID: arm64
+            RUNTIME: linux-arm64
     build-commands:
-      - '. /usr/lib/sdk/dotnet8/enable.sh ; dotnet publish -r linux-$RID -c Release --self-contained true --source ./nuget-sources GalaxyBudsClient/GalaxyBudsClient.csproj'
-      - 'cp -r --remove-destination /run/build/GalaxyBudsClient/GalaxyBudsClient/bin/Release/net8.0/linux-$RID/publish/ /app/bin/'
+      - mkdir -p /app/bin
+      - 'dotnet publish -r $RUNTIME -c Release --self-contained true --source ./nuget-sources --source /usr/lib/sdk/dotnet10/nuget/packages GalaxyBudsClient/GalaxyBudsClient.csproj'
+      - 'cp -r --remove-destination /run/build/GalaxyBudsClient/GalaxyBudsClient/bin/Release/net10.0/$RUNTIME/publish/* /app/bin/'
       - install -Dm644 meta/flatpak/me.timschneeberger.GalaxyBudsClient.metainfo.xml /app/share/metainfo/me.timschneeberger.GalaxyBudsClient.metainfo.xml
       - install -Dm644 GalaxyBudsClient/Resources/icon.png /app/share/icons/hicolor/128x128/apps/me.timschneeberger.GalaxyBudsClient.png
       - install -Dm644 meta/flatpak/me.timschneeberger.GalaxyBudsClient.desktop /app/share/applications/me.timschneeberger.GalaxyBudsClient.desktop
