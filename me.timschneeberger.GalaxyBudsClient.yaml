@@ -27,8 +27,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/timschneeb/GalaxyBudsClient
-        tag: 5.2.1
-        commit: 057ba4db509e5852b87ba6f62580045e234fae57
+        # tag: 5.2.1
+        # 1 commit after 5.1.2:
+        commit: 8e30b1fd88a6901b941f3683088f72f7b788ab60
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
