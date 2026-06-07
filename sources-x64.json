@@ -441,10 +441,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/10.0.3/microsoft.aspnetcore.app.runtime.linux-x64.10.0.3.nupkg",
-        "sha512": "5d4025c53fa23aff698734f8b0ac70de8c650f25864a1c3f33f7060d6885a7b4bbc4f906bd417c921284b12604900458b2b3f8c73383f81a42a7da1d9b6c0b3b",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/10.0.8/microsoft.aspnetcore.app.runtime.linux-x64.10.0.8.nupkg",
+        "sha512": "a781e31a112160fdc0ec19b861661459baccb19209c2be4cce9acd911898b36de7308dc054da164a4bcf03a1db54572360b1d135c7d54f590fc1fad0c9ef01bc",
         "dest": "nuget-sources",
-        "dest-filename": "microsoft.aspnetcore.app.runtime.linux-x64.10.0.3.nupkg",
+        "dest-filename": "microsoft.aspnetcore.app.runtime.linux-x64.10.0.8.nupkg",
         "only-arches": [
             "x86_64"
         ]
@@ -1031,10 +1031,10 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/10.0.3/microsoft.netcore.app.runtime.linux-x64.10.0.3.nupkg",
-        "sha512": "ff9b987903d5f2cb5fd61c4d5412853efaa29470c3193d308cd35afa001baf68513fee0bb8dc875677ac3ebc1625e4a39714f94e7ed4e512e9961eb03ae292ad",
+        "url": "https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.runtime.linux-x64/10.0.8/microsoft.netcore.app.runtime.linux-x64.10.0.8.nupkg",
+        "sha512": "0c06ed751c8c0a4bb91fcb0ed2b57b171f8ae3d2d7ce592675c9a2e56703fed6b39e5f4e11c1ca2f2d795972404246f1e7b89b6c9df903c0fcd34b0e021beac1",
         "dest": "nuget-sources",
-        "dest-filename": "microsoft.netcore.app.runtime.linux-x64.10.0.3.nupkg",
+        "dest-filename": "microsoft.netcore.app.runtime.linux-x64.10.0.8.nupkg",
         "only-arches": [
             "x86_64"
         ]
@@ -1935,6 +1935,16 @@
         "sha512": "01e55dad6b1b3060cf3022727231db50ae1272f8d71112783f9213fe1adc930cd8ee60227f7b5569711287858086a9e882beda137ebd08c279fda23c89af25f2",
         "dest": "nuget-sources",
         "dest-filename": "tmds.dbus.protocol.0.21.2.nupkg",
+        "only-arches": [
+            "x86_64"
+        ]
+    },
+    {
+        "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/tmds.dbus.protocol/0.21.3/tmds.dbus.protocol.0.21.3.nupkg",
+        "sha512": "f0ef19dd98225a5881462f891183c394d8aa8925b3a64084a6bdca15af9bf8bbd98c017fd226c8f99aa922f4887abbad6f920ac90ac61972447b92e1b5ffe834",
+        "dest": "nuget-sources",
+        "dest-filename": "tmds.dbus.protocol.0.21.3.nupkg",
         "only-arches": [
             "x86_64"
         ]

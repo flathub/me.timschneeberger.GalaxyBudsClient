@@ -27,9 +27,9 @@ modules:
     sources:
       - type: git
         url: https://github.com/timschneeb/GalaxyBudsClient
-        # tag: 5.2.0
-        # Flatpak fix: 2 commits after 5.2.0
-        commit: 49c000c8bb8f8d9b130c32a567d91c56cda2d191
+        # tag: 5.2.1
+        # 1 commit after 5.1.2:
+        commit: 8e30b1fd88a6901b941f3683088f72f7b788ab60
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
