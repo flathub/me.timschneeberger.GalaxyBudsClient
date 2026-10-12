@@ -1,6 +1,6 @@
 app-id: me.timschneeberger.GalaxyBudsClient
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: GalaxyBudsClient
 sdk-extensions:
@@ -30,6 +30,8 @@ modules:
         # tag: 5.2.1
         # 1 commit after 5.1.2:
         commit: 8e30b1fd88a6901b941f3683088f72f7b788ab60
+      - type: patch
+        path: dotnet-sdk-rollforward.patch
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
