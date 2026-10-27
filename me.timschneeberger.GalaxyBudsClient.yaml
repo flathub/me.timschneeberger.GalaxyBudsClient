@@ -17,6 +17,7 @@ finish-args:
   - --talk-name=com.canonical.Unity.LauncherEntry
   - --talk-name=org.kde.StatusNotifierWatcher
   - --own-name=org.kde.*
+  - --env=FONTCONFIG_FILE=/app/etc/fonts/fonts.conf # see fontconfig-no-host-cache.sh
 build-options:
   append-path: /usr/lib/sdk/dotnet10/bin
   append-ld-library-path: /usr/lib/sdk/dotnet10/lib
@@ -32,6 +33,8 @@ modules:
         commit: 8e30b1fd88a6901b941f3683088f72f7b788ab60
       - type: patch
         path: dotnet-sdk-rollforward.patch
+      - type: file
+        path: fontconfig-no-host-cache.sh
       - sources-arm64.json
       - sources-x64.json
     buildsystem: simple
@@ -50,3 +53,5 @@ modules:
       - install -Dm644 meta/flatpak/me.timschneeberger.GalaxyBudsClient.metainfo.xml /app/share/metainfo/me.timschneeberger.GalaxyBudsClient.metainfo.xml
       - install -Dm644 GalaxyBudsClient/Resources/icon.png /app/share/icons/hicolor/128x128/apps/me.timschneeberger.GalaxyBudsClient.png
       - install -Dm644 meta/flatpak/me.timschneeberger.GalaxyBudsClient.desktop /app/share/applications/me.timschneeberger.GalaxyBudsClient.desktop
+      - mkdir -p /app/etc/fonts
+      - sh fontconfig-no-host-cache.sh > /app/etc/fonts/fonts.conf
